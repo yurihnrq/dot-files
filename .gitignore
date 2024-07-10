@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!.zshrc
+!.config/
+.config/*
+!/.config/nvim
+
