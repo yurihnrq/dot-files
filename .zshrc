@@ -1,5 +1,9 @@
-# If you come from bash you might have to change your $PATH.
-export PATH="$PATH:/opt/nvim-linux64/bin:/usr/local/go/bin:/usr/local/lua-lsp/bin"
+export GOPATH="$HOME/.go"
+
+NVIM_BIN="/opt/nvim-linux64/bin"
+GO_BIN="/usr/local/go/bin:$GOPATH/bin"
+LUA_LSP_BIN="/usr/local/lua-lsp/bin"
+export PATH="$PATH:$NVIM_BIN:$GO_BIN:$GOPATH:$LUA_LSP_BIN"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
