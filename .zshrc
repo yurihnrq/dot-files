@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$PATH:/opt/nvim-linux64/bin:/usr/local/go/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin:/usr/local/go/bin:/usr/local/lua-lsp/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -165,3 +165,5 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add ~/.ssh/id_github > /dev/null 2>&1
 fi
 
+
+export GPG_TTY=$(tty)
