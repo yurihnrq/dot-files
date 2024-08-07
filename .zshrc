@@ -78,3 +78,9 @@ fi
 # Load GPG keys
 export GPG_TTY=$(tty)
 
+# Tell the terminal the CWD
+keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+precmd_functions+=(keep_current_path)
+
