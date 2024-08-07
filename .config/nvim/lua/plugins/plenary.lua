@@ -1,3 +1,0 @@
-return {
-	"natecraddock/workspaces.nvim"
-}
