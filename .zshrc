@@ -23,8 +23,15 @@ export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_ASYNC_SHOW=false
 export SPACESHIP_PROMPT_ASYNC=false
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+# ZSH plugins
+plugins=(
+	git 
+	zsh-syntax-highlighting 
+	zsh-autosuggestions
+	docker
+)
 
+# Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
