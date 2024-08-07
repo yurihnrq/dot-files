@@ -42,6 +42,22 @@ alias gaca="ga -A && gc --amend"
 alias explorer="explorer.exe ."
 alias ls="eza --icons -T -L=1"
 
+# Functions
+# Load environment variables from file
+load-env-file() {
+	local env_file="$1"
+	if [ -f "$env_file" ]; then
+		export $(grep -v '^#' $env_file | xargs -d '\n')
+	fi
+}
+# Unset environment variables from file
+unset-env-file() {
+	local env_file="$1"
+	if [ -f "$env_file" ]; then
+		unset $(grep -v '^#' $env_file | sed -E 's/(.*)=.*/\1/' | xargs)
+	fi
+}
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 # This loads nvm
