@@ -10,6 +10,8 @@ return {
 			lspconfig.gopls.setup({})
 			-- For C/C++ install clangd (https://clangd.llvm.org/installation.html)
 			lspconfig.clangd.setup({})
+			-- For python install pyright (https://github.com/microsoft/pyright/blob/main/docs/installation.md#command-line)
+			lspconfig.pyright.setup({})
 		end,
 	},
 	{

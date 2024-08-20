@@ -31,6 +31,9 @@ return {
 				cpp = {
 					require("formatter.filetypes.cpp").clangformat,
 				},
+				python = {
+					require("formatter.filetypes.python").ruff,
+				},
 			},
 		})
 
