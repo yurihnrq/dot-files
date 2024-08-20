@@ -8,6 +8,8 @@ return {
 			lspconfig.lua_ls.setup({})
 			-- For go install see gopls (https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install)
 			lspconfig.gopls.setup({})
+			-- For C/C++ install clangd (https://clangd.llvm.org/installation.html)
+			lspconfig.clangd.setup({})
 		end,
 	},
 	{
