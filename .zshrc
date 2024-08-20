@@ -41,6 +41,7 @@ alias gacm="ga -A && gc -m"
 alias gaca="ga -A && gc --amend"
 alias explorer="explorer.exe ."
 alias ls="eza --icons -T -L=1"
+alias python="python3"
 
 # Functions
 # Load environment variables from file
