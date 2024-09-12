@@ -3,5 +3,5 @@ return {
 	config = function()
 		-- Load onedark theme
 		require("onedark").load()
-	end
+	end,
 }

@@ -1,3 +1,3 @@
 return {
-	"dyng/ctrlsf.vim"
+	"dyng/ctrlsf.vim",
 }
