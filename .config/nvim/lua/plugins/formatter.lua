@@ -2,7 +2,6 @@ return {
 	"mhartington/formatter.nvim",
 	config = function()
 		-- Config formatters per filetype using built in configs from formatter plugin
-		local util = require("formatter.util")
 		require("formatter").setup({
 			logging = true,
 			log_level = vim.log.levels.WARN,
