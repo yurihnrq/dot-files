@@ -22,6 +22,8 @@ export SPACESHIP_DOCKER_COMPOSE_SHOW=false
 export SPACESHIP_DOCKER_SHOW=false
 export SPACESHIP_ASYNC_SHOW=false
 export SPACESHIP_PROMPT_ASYNC=false
+export SPACESHIP_GOLANG_SYMBOL=" "
+export SPACESHIP_NODE_SYMBOL=" "
 
 # ZSH plugins
 plugins=(
