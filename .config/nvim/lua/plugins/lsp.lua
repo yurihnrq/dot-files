@@ -5,7 +5,16 @@ return {
 			local lspconfig = require("lspconfig")
 
 			-- For lua install lua-language-server(https://luals.github.io/#neovim-install)
-			lspconfig.lua_ls.setup({})
+			lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						diagnostics = {
+							-- Get the language server to recognize the `vim` global
+							globals = { "vim" },
+						},
+					},
+				},
+			})
 			-- For go install see gopls (https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install)
 			lspconfig.gopls.setup({})
 			-- For C/C++ install clangd (https://clangd.llvm.org/installation.html)
