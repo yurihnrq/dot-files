@@ -1,6 +1,8 @@
 -- Use one statusline globally
 vim.opt.laststatus = 3
--- Hide cmd line
+-- Hide mode information from cmdline
+vim.opt.showmode = false
+-- Hide cmdline
 vim.opt.cmdheight = 0
 
 return {

@@ -5,6 +5,10 @@ vim.opt.cursorline = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Remove line numbers on TermOpen and add again on TermClose
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
