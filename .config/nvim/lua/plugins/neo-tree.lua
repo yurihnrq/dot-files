@@ -40,7 +40,7 @@ return {
 		popup_border_style = "rounded",
 		hijack_netrw_behavior = "disabled",
 		window = {
-			position = "float",
+			position = "right",
 			width = 40,
 			mappings = {
 				["<C-u>"] = { "scroll_preview", config = { direction = 10 } },
