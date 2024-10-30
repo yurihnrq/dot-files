@@ -6,10 +6,6 @@ vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap
 
 return {
 	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	},
@@ -30,7 +26,6 @@ return {
 					},
 				},
 			})
-			require("telescope").load_extension("file_browser")
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("noice")
 
@@ -41,15 +36,6 @@ return {
 					vim.wo.wrap = true
 				end,
 			})
-
-			-- Open file browser on startup
-			--	vim.api.nvim_create_autocmd("VimEnter", {
-			--		callback = function()
-			--			if vim.fn.argv(0) == "" then
-			--				require("telescope").extensions.file_browser.file_browser()
-			--			end
-			--		end,
-			--	})
 		end,
 	},
 }
