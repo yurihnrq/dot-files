@@ -53,7 +53,7 @@ corepack enable;
 echo "nvm and node installed.";
 
 echo "\nInstalling typescript, tsx, eslint_d, pyright and @johnnymorganz/stylua-bin";
-npm i -g typescript tsx eslind_d pyright @johnnymorganz/stylua-bin;
+npm i -g typescript tsx eslint_d pyright @johnnymorganz/stylua-bin;
 echo "Packages installed.";
 
 echo "\nInstalling go and gopls...";
