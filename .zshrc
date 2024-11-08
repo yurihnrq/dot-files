@@ -31,7 +31,15 @@ plugins=(
 	zsh-syntax-highlighting 
 	zsh-autosuggestions
 	docker
+    tmux
 )
+
+# tmux plugin configuration
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOQUIT=true
+ZSH_TMUX_CONFIG="~/.config/tmux/tmux.conf"
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -44,6 +52,11 @@ alias gaca="ga -A && gc --amend"
 alias explorer="explorer.exe ."
 alias ls="eza --icons -T -L=1"
 alias python="python3"
+alias tmux="tmux -f $ZSH_TMUX_CONFIG"
+
+# Make Home and End keys work with tmux and nvim
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
 
 # Functions
 # Load environment variables from file
@@ -98,15 +111,9 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s` > /dev/null 2>&1
 
   # Add ssh keys here:
-  ssh-add ~/.ssh/id_github > /dev/null 2>&1
+  ssh-add ~/.ssh/id_github_ed25519 > /dev/null 2>&1
 fi
 
 # Load GPG keys
 export GPG_TTY=$(tty)
-
-# Tell the terminal the CWD
-keep_current_path() {
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-}
-precmd_functions+=(keep_current_path)
 
