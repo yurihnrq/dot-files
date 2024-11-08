@@ -39,7 +39,6 @@ ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_AUTOQUIT=true
-ZSH_TMUX_CONFIG="~/.config/tmux/tmux.conf"
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -52,7 +51,7 @@ alias gaca="ga -A && gc --amend"
 alias explorer="explorer.exe ."
 alias ls="eza --icons -T -L=1"
 alias python="python3"
-alias tmux="tmux -f $ZSH_TMUX_CONFIG"
+alias tmux="tmux -f ~/.tmux.conf"
 
 # Make Home and End keys work with tmux and nvim
 bindkey "\E[1~" beginning-of-line
