@@ -4,7 +4,7 @@ vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", 
 vim.api.nvim_set_keymap("i", "<C-r>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
 
 -- Go to definition using LSP in normal mode
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 -- Go to definition using LSP in insert mode
 vim.api.nvim_set_keymap("i", "<C-g>", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
