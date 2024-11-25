@@ -36,8 +36,7 @@ plugins=(
 
 # tmux plugin configuration
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOQUIT=true
 
 # Load oh-my-zsh
