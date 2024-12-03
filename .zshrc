@@ -31,7 +31,7 @@ plugins=(
 	zsh-syntax-highlighting 
 	zsh-autosuggestions
 	docker
-    tmux
+   tmux
 )
 
 # tmux plugin configuration

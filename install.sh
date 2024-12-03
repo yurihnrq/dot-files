@@ -69,8 +69,7 @@ read -p "Enter git user email (also used in GitHub ssh key): " git_email;
 read -p "Enter git user name: " git_name;
 cd;
 mkdir ~/.ssh
-echo -ne 'id_github\n\n\n' | ssh-keygen -t ed25519 -C "${git_email}";
-mv id_github id_github.pub ~/.ssh;
+echo -ne '~/.ssh/id_github_ed25519\n\n\n' | ssh-keygen -t ed25519 -C "${git_email}";
 eval "$(ssh-agent -s)";
 ssh-add ~/.ssh/id_github;
 xclip -sel c < ~/.ssh/id_github.pub;
@@ -105,15 +104,15 @@ array=(
 
 for i in "${array[@]}"
 do
-	EXTENSION_ID=$(curl -s $i | grep -oP 'data-uuid="\K[^"]+')
-	VERSION_TAG=$(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$EXTENSION_ID" | jq '.extensions[0] | .shell_version_map | map(.pk) | max')
-	wget -O ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
-	gnome-extensions install --force ${EXTENSION_ID}.zip
-	if ! gnome-extensions list | grep --quiet ${EXTENSION_ID}; then
-        	busctl --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${EXTENSION_ID}
-	fi
-    	gnome-extensions enable ${EXTENSION_ID}
-    	rm ${EXTENSION_ID}.zip
+    EXTENSION_ID=$(curl -s $i | grep -oP 'data-uuid="\K[^"]+')
+    VERSION_TAG=$(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$EXTENSION_ID" | jq '.extensions[0] | .shell_version_map | map(.pk) | max')
+    wget -O ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
+    gnome-extensions install --force ${EXTENSION_ID}.zip
+    if ! gnome-extensions list | grep --quiet ${EXTENSION_ID}; then
+        busctl --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${EXTENSION_ID}
+    fi
+    gnome-extensions enable ${EXTENSION_ID}
+    rm ${EXTENSION_ID}.zip
 done
 echo "Gnome extensions installed.";
 
