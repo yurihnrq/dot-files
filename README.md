@@ -22,6 +22,34 @@ The `install.sh` file will install all necessary packages, tools and dependencie
 
 All the configurations provided by this repository are described bellow along with some settings that should be done manually.
 
+### Zsh
+
+The `.zshrc` file provides the following settings:
+
+- updates path variable;
+- adds spaceship theme configuration;
+- adds oh-my-zsh plugins (git, highlighting, autosuggestions, docker and tmux);
+- adds some aliases for general usage (makes ls redirects to eza);
+- adds functions to load and unset env file values (load-env-file and unset-env-file);
+- adds nvm hook to auto load node version in `.nvmrc` files;
+- loads ssh keys (only github one by default) on initialization;
+- loads GPG keys on initialization.
+
+### Tmux
+
+The `.tmux.conf` file provides the following settings:
+
+- remaps prefix to <C-a>;
+- modifies split panes keybinds to `<prefix>` + `-` and `<prefix>` + `=`;
+- enables mouse mode;
+- disables automatic renaming;
+- binds `<prefix>` + `r` to reload configuration file;
+- uses xclip to copy and paste with system clipboard;
+- makes Home and End keys work with tmux;
+- binds `Alt` + `h`/`j`/`k`/`l` to switch panes without prefix;
+- renames terminal tab title to current path;
+- does general UI modifications.
+
 ### Nvim
 
 The nvim folder contains all files that provides general and plugin specific settings. The configured plugins (using lazy package manager) provides the following features:
