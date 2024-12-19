@@ -12,29 +12,34 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Theme configuration
 ZSH_THEME="spaceship"
-export SPACESHIP_BATTERY_SHOW=false
-export SPACESHIP_USER_SHOW=always
-export SPACESHIP_HOST_SHOW=always
-export SPACESHIP_PROMPT_ADD_NEWLINE=false
-export SPACESHIP_DIR_TRUNC=1
-export SPACESHIP_PACKAGE_SHOW=false
-export SPACESHIP_DOCKER_COMPOSE_SHOW=false
-export SPACESHIP_DOCKER_SHOW=false
-export SPACESHIP_ASYNC_SHOW=false
-export SPACESHIP_PROMPT_ASYNC=false
-export SPACESHIP_GOLANG_SYMBOL=" "
+
 export SPACESHIP_NODE_SYMBOL=" "
+export SPACESHIP_GOLANG_SYMBOL=" "
+export SPACESHIP_DIR_TRUNC=1
+export SPACESHIP_PROMPT_ORDER=(
+   user
+   dir
+   host
+   venv
+   node
+   python
+   golang
+   git
+   exit_code
+   exec_time
+   line_sep
+   char
+)
 
 # ZSH plugins
 plugins=(
-	git 
-	zsh-syntax-highlighting 
-	zsh-autosuggestions
-	docker
+   git 
+   zsh-syntax-highlighting 
+   zsh-autosuggestions
+   docker
    tmux
 )
 
-# tmux plugin configuration
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOQUIT=true
@@ -42,19 +47,20 @@ ZSH_TMUX_AUTOQUIT=true
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Make Home and End keys work with tmux and nvim
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
+
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
 alias gac="ga -A && gc"
 alias gacm="ga -A && gc -m"
 alias gaca="ga -A && gc --amend"
+alias gll="git pull --all"
 alias explorer="explorer.exe ."
 alias ls="eza --icons -T -L=1"
 alias python="python3"
 alias tmux="tmux -f ~/.tmux.conf"
-
-# Make Home and End keys work with tmux and nvim
-bindkey "\E[1~" beginning-of-line
-bindkey "\E[4~" end-of-line
 
 # Functions
 # Load environment variables from file
