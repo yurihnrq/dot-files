@@ -16,6 +16,9 @@ ZSH_THEME="spaceship"
 export SPACESHIP_NODE_SYMBOL=" "
 export SPACESHIP_GOLANG_SYMBOL=" "
 export SPACESHIP_DIR_TRUNC=1
+export SPACESHIP_TIME_SHOW=always
+export SPACESHIP_USER_SHOW=always
+export SPACESHIP_HOST_SHOW=always
 export SPACESHIP_PROMPT_ORDER=(
    user
    dir
