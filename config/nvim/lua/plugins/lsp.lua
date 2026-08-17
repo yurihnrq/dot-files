@@ -1,22 +1,11 @@
 require("lazydev").setup()
 
-vim.lsp.config("tsgo", {
-	name = "typescript",
+vim.lsp.config("tsc", {
 	settings = {
 		typescript = {
 			preferences = { importModuleSpecifierPreference = "non-relative" },
 		},
 	},
-	cmd = function(dispatchers, config)
-		local cmd = "tsc"
-		if (config or {}).root_dir then
-			local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
-			if vim.fn.executable(local_cmd) == 1 then
-				cmd = local_cmd
-			end
-		end
-		return vim.lsp.rpc.start({ cmd, "--lsp", "--stdio" }, dispatchers)
-	end,
 })
 
 vim.lsp.config("jsonls", {
@@ -63,6 +52,6 @@ vim.lsp.enable({
 	"ruff",
 	"sqruff",
 	"tailwindcss",
-	"tsgo",
+	"tsc",
 	"yamlls",
 })
