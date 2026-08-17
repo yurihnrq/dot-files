@@ -1,0 +1,14 @@
+[theme]
+name = "terminal"
+
+[keys]
+prefix = "ctrl+a"
+new_tab = "prefix+t"
+next_tab = "prefix+l"
+previous_tab = "prefix+h"
+split_horizontal = "prefix+minus"
+split_vertical = "prefix+="
+
+[ui]
+hide_tab_bar_when_single_tab = true
+
