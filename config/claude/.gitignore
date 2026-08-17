@@ -6,3 +6,6 @@
 
 !commands/
 !commands/**
+!skills/
+!skills/annotate-web-page-screenshot/
+!skills/annotate-web-page-screenshot/**
